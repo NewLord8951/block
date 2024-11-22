@@ -1,1 +1,3 @@
-print("1 2 3 4")
+number = input("Введите числа: ")
+for char in number:
+    print(char + " ", end= '')
