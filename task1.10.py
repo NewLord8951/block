@@ -1,3 +1,1 @@
-print("5")
-print("10")
-print("21")
+print ("5\n10\n21")
