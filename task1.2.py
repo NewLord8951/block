@@ -1,2 +1,2 @@
-from math import e 
+from math import e
 print(round(e, 1))
