@@ -1,20 +1,41 @@
-x1 = int(input("Введите координату x1: "))
-y1 = int(input("Введите координату y1: "))
-x2 = int(input("Введите координату x2: "))
-y2 = int(input("Введите координату y2: "))
-x3 = int(input("Введите координату x3: "))
-y3 = int(input("Введите координату y3: "))
-lx1 = abs(x1 - x2)
-ly1 = abs(y1 - y2)
-lx2 = abs(x2 - x3)
-ly2 = abs(y2 - y3)
-lx3 = abs(x3 - x1)
-ly3 = abs(y3 - y1)
-side1 = s = round(((lx1 ** 2) + (ly1 ** 2)) ** 0.5, 2)
-side2 = s = round(((lx2 ** 2) + (ly2 ** 2)) ** 0.5, 2)
-side3 = s = round(((lx3 ** 2) + (ly3 ** 2)) ** 0.5, 2)
-p = side1 + side2 + side3
-s = round(((p / 2) * (
-        (p / 2) - side1) * ((p / 2) - side2) * ((p / 2) - side3)) ** 0.5, 2)
-print("Периметр = ", p)
-print("Площадь = ", s)
+import math
+
+
+def distance(point1, point2):
+    return math.sqrt(
+        (point2[0] - point1[0]) ** 2 + (point2[1] - point1[1]) ** 2)
+
+
+def perimeter(a, b, c):
+    return distance(a, b) + distance(b, c) + distance(c, a)
+
+
+def area(a, b, c):
+    ab = distance(a, b)
+    bc = distance(b, c)
+    ca = distance(c, a)
+
+    s = (ab + bc + ca) / 2
+
+    return math.sqrt(s * (s - ab) * (s - bc) * (s - ca))
+
+
+x1, y1 = map(float, input("Введите координаты первой вершины (x1, y1): \
+ ").split())
+x2, y2 = map(float, input("Введите координаты второй вершины (x2, y2): \
+ ").split())
+x3, y3 = map(float, input("Введите координаты третьей вершины (x3, y3): \
+").split())
+
+
+A = (x1, y1)
+B = (x2, y2)
+C = (x3, y3)
+
+
+tr_perimeter = perimeter(A, B, C)
+tr_area = area(A, B, C)
+
+
+print(f"Периметр треугольника: {tr_perimeter:.2f}")
+print(f"Площадь треугольника: {tr_area:.2f}")
