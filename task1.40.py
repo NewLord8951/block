@@ -1,4 +1,6 @@
 from math import sin
+
+
 a = int(input("Введите a: "))
 b = int(input("Введите b: "))
 x = round(((2 / (((a ** 2) + 25) + b)) + b) / ((b ** 0.5) + ((a + b) / 2)), 2)
