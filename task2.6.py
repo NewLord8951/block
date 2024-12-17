@@ -1,11 +1,9 @@
-s = int(input("Введите количество секунд: "))
-h = s // 3600
-print("а) часов прошло", h)
+n = int(input("Введите секунды:"))
 
-ho = int(input("Введите количество часов: "))
-min = ho * 60
-print("б) минут прошло", min)
+hours_passed = round(n / 3600)
+minutes_passed = round((n % 3600) / 60)
+seconds_passed = round(n % 60)
 
-m = int(input("Введите количество минут: "))
-sec = m * 60
-print("в) секунд прошло", sec)
+print(f"Часов прошло:{hours_passed}")
+print(f"Минут прошло:{minutes_passed}")
+print(f"Секунд прошло:{seconds_passed}")
