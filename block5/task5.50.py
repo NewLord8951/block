@@ -1,12 +1,6 @@
-def average_mass(masses):
-    if len(masses) == 0:
-        return None
-
-    total_mass = sum(masses)
-    average = total_mass / len(masses)
-    return average
+def average(numbers):
+    return sum(numbers) / len(numbers)
 
 
-masses = [5, 8, 12, 7, 9]
-average_value = average_mass(masses)
-print(f"Средняя масса: {average_value}")
+print("Среднее арифметическое чисел 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 \
+      равно:", average([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
